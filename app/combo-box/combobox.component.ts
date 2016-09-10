@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     // moduleId :: setting moduleId: module.id in the @Component decorator is the key here.
@@ -14,6 +14,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ComboBoxComponent implements OnInit {
+
+    @Input() options: Object[];
+    @Input() strictCompare: Boolean
 
     // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
