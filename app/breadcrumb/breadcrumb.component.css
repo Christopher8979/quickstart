@@ -35,3 +35,8 @@
 .breadcrumb-item.active {
   color: #818a91;
 }
+
+.breadcrumb-item.active > a {
+  text-decoration: none;
+  color: #818a91;
+}

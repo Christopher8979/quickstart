@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     // moduleId :: setting moduleId: module.id in the @Component decorator is the key here.
@@ -13,4 +13,17 @@ import { Component } from '@angular/core';
     templateUrl: './breadcrumb.component.html'
 })
 
-export class BreadcrumbComponent {};
+
+export class BreadcrumbComponent implements OnInit {
+    @Input() options: Object[];
+    @Input() continerClass : String;
+
+    constructor() {
+        console.log('input config ::', this.options);
+    }
+
+    ngOnInit(){
+        console.log('input config  from init::', this.options);
+        console.log('input config  from init::', this.continerClass);
+    }
+};

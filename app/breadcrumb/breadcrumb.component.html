@@ -1,5 +1,5 @@
-<ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+<ol class="breadcrumb" [ngClass]="continerClass">
+  <li *ngFor="let crumb of options; let crumbindex = index" class="breadcrumb-item" [ngClass]="{'active' : crumbindex == options.length-1}" >
+    <a href="{{crumb.url}}">{{crumb.label}}</a>
+  </li>
 </ol>
