@@ -13,17 +13,28 @@ import { Component, Input, OnInit } from '@angular/core';
     templateUrl: './breadcrumb.component.html'
 })
 
+// Component Description ::
+//
+// Breadcrumb accepts
+// 
+// 1. options ::  an array of Objects
+//    structure of each Object ::
+//    {
+//       label : String : title to be displayed
+//       url   : String : Url to redirect on clicking that cumb
+//    }
+//  
+// 2. containerClass :: String
+//    This is additional string that is given to the breadcrumb.
+//    This will be added to container of the component.
 
 export class BreadcrumbComponent implements OnInit {
     @Input() options: Object[];
     @Input() continerClass : String;
 
-    constructor() {
-        console.log('input config ::', this.options);
-    }
-
+    // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
-        console.log('input config  from init::', this.options);
-        console.log('input config  from init::', this.continerClass);
+        // console.log('options provided::', this.options);
+        // console.log('container class provided::', this.continerClass);
     }
 };

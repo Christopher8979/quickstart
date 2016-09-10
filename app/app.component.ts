@@ -21,6 +21,5 @@ export class AppComponent {
                 url : '#'
             }
         ]
-    }    
-
+    }
 }
