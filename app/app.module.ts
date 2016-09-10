@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
 
-import { CustomComponent } from './custom/custom.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   imports: [ BrowserModule ],
-  declarations: [ AppComponent, CustomComponent ],
+  declarations: [ AppComponent, BreadcrumbComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
