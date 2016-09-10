@@ -1,13 +1,13 @@
 <div class="combo-box">
   <div class="input-group">
-    <input type="text" placeholder="" class="combobox form-control">
+    <input type="text" [(ngModel)]="typeText" placeholder="Select One" class="combobox form-control">
     <span class="input-group-addon dropdown-toggle" data-dropdown="dropdown"> <span class="caret"></span> <span class="glyphicon glyphicon-remove"></span> </span>
   </div>
 </div>
 
 
 <ul>
-  <li *ngFor="let option of (options | filter : searchFor : 'Ca' : strictCompare)">
+  <li *ngFor="let option of (options | filter : searchFor : typeText : strictCompare)">
     {{option.name}}
   </li>
 </ul>

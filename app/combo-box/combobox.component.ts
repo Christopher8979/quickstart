@@ -16,10 +16,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ComboBoxComponent implements OnInit {
 
     @Input() options: Object[];
-    @Input() strictCompare: Boolean;
-    @Input() searchFor: String;
+    @Input() strictCompare: boolean;
+    @Input() searchFor: string;
+    @Input() selected: any;
+
+    private typeText: string;
 
     // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
+        this.typeText = this.selected[this.searchFor] || '';
     }
 };

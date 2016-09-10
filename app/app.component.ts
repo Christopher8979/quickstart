@@ -617,6 +617,11 @@ export class AppComponent {
             }
         ],
         'searchWith' : 'name',
-        'strictSearch' : true
+        'strictSearch' : true,
+        'value': {
+            "name": "Hydrogen",
+            "symbol": "H",
+            "number": 1
+            }
     };
 }

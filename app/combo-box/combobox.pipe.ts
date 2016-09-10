@@ -11,17 +11,24 @@ export class FilterPipe implements PipeTransform{
     // term - value with which filetering has to happen
     // comparator - used in determining if the expected value should be considered a match
     transform(value:any[], keyToFilter: string, term: any, comparator: any): Object[] {
-        term = term.toLocaleLowerCase(); 
-        comparator = comparator || false;
+        // If any error occurs while the filter operation
+        // retrning complete array sent for filtering
+        try {
+            term = term.toLocaleLowerCase(); 
+            comparator = comparator || false;
 
-        if (!term) {
+            if (!term) {
+                return value;
+            }
+
+            // If the comparator is true, checks strictly for the value
+            if (comparator) {
+                return value.filter(item => item[keyToFilter].toLowerCase().startsWith(term));
+            } else {
+                return value.filter(item => (item[keyToFilter].toLowerCase().indexOf(term)!== -1));
+            }
+        } catch(err) {
             return value;
-        }
-
-        if (comparator) {
-            return value.filter(item => item[keyToFilter].toLowerCase().startsWith(term));
-        } else {
-            return value.filter(item => (item[keyToFilter].toLowerCase().indexOf(term)!== -1));
         }
     }
 }
