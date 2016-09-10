@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
 
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { ComboBoxComponent } from './combo-box/combobox.component';
 
 @NgModule({
   imports: [ BrowserModule ],
-  declarations: [ AppComponent, BreadcrumbComponent ],
+  declarations: [ AppComponent, BreadcrumbComponent, ComboBoxComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
