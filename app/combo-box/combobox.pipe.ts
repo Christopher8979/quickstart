@@ -1,14 +1,16 @@
-import { Pipe, PipeTransform, Injectable } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 
 @Pipe({
     name : 'filter'
 })
 
-@Injectable()
 export class FilterPipe implements PipeTransform{
-    transform(value:any[], term: any, comparator: any): Object[] {
-        console.log(value, term);
+    // value - Array to be filtered
+    // keyToFilter - key with which filtering has to happen
+    // term - value with which filetering has to happen
+    // comparator - used in determining if the expected value should be considered a match
+    transform(value:any[], keyToFilter: string, term: any, comparator: any): Object[] {
         term = term.toLocaleLowerCase(); 
         comparator = comparator || false;
 
@@ -17,12 +19,9 @@ export class FilterPipe implements PipeTransform{
         }
 
         if (comparator) {
-            console.log(value.filter(item => item.name.toLowerCase().startsWith(term));
-            return value.filter(item => item.name.toLowerCase().startsWith(term));
-            // return value.filter(function (item: Object) :item {});
+            return value.filter(item => item[keyToFilter].toLowerCase().startsWith(term));
         } else {
-            console.log(value.filter(item => (item.name.toLowerCase().indexOf(term)!== -1)));
-            return value.filter(item => (item.name.toLowerCase().indexOf(term)!== -1));
+            return value.filter(item => (item[keyToFilter].toLowerCase().indexOf(term)!== -1));
         }
     }
 }

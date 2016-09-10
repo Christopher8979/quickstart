@@ -24,7 +24,7 @@ export class AppComponent {
     };
 
     public combobox: Object = {
-        "options": [
+        'options': [
             {
             "name": "Hydrogen",
             "symbol": "H",
@@ -615,6 +615,8 @@ export class AppComponent {
             "symbol": "Uuo",
             "number": 118
             }
-        ]
+        ],
+        'searchWith' : 'name',
+        'strictSearch' : true
     };
 }

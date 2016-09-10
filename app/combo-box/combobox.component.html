@@ -7,7 +7,7 @@
 
 
 <ul>
-  <li *ngFor="let option of (options | filter : 'Ca' : strictCompare)">
+  <li *ngFor="let option of (options | filter : searchFor : 'Ca' : strictCompare)">
     {{option.name}}
   </li>
 </ul>

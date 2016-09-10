@@ -16,7 +16,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ComboBoxComponent implements OnInit {
 
     @Input() options: Object[];
-    @Input() strictCompare: Boolean
+    @Input() strictCompare: Boolean;
+    @Input() searchFor: String;
 
     // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
