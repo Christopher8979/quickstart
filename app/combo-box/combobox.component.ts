@@ -21,9 +21,33 @@ export class ComboBoxComponent implements OnInit {
     @Input() selected: any;
 
     private typeText: string;
+    private dropDownOpened: boolean = false;
+    private isClearEnabled: boolean = false;
 
     // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
         this.typeText = this.selected[this.searchFor] || '';
     }
+
+    typing(valueTyped : string){
+        this.dropDownOpened = true;
+    }
+
+    // method to handle click
+    selectThis(value:any){
+        this.selected = value;
+        this.dropDownOpened = false;
+        this.typeText = value[this.searchFor];
+        this.isClearEnabled = true;    
+
+        // Event to be emitted    
+    }
+
+    clearSelection() {
+        this.selected = {};
+        this.typeText = '';
+        this.isClearEnabled = false;
+    }
+
+    
 };

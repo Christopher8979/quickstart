@@ -618,10 +618,10 @@ export class AppComponent {
         ],
         'searchWith' : 'name',
         'strictSearch' : true,
-        'value': {
-            "name": "Hydrogen",
-            "symbol": "H",
-            "number": 1
-            }
+        'value': {}
     };
+
+    selectionMadeCallBack(value : any) {
+        console.log(value);
+    }
 }
