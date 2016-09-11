@@ -1,4 +1,27 @@
 <div class="mask"></div>
 <div class="modal">
-  modal content
+  <div class="modal-header">
+    <h2>{{heading}}</h2>
+    <span class="close"></span>
+  </div>
+  <div class="modal-body"></div>
+  <div class="modal-footer">
+    <div class="clearfix" style="padding-top: 15px;">
+      <div class="left">
+        <label for="dontShowNext">
+        <input type="checkbox"> Don't show me again
+        </label>
+      </div>
+      <div class="left" style="text-align: center;">
+        Viewing 1 of 6
+      </div>
+      <div class="left">
+        <div class="action-buttons right">
+          <button [disabled]=true>Previous</button>
+          <button>Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>

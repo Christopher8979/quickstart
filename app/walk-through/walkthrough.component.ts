@@ -18,4 +18,6 @@ export class WalkThroughComponent implements OnInit {
     // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
     }
+
+    private heading: string = 'Welcome to first time walk through';
 };
