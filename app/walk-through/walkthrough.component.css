@@ -1,0 +1,21 @@
+.mask {
+  background: #677c9c;
+  opacity: 0.3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+
+.modal {
+  background: #fff;
+  position: fixed;
+  top: 20%;
+  left: 15%;
+  bottom: 20%;
+  right: 15%;
+  z-index: 1010;
+}
