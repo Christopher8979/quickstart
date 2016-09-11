@@ -7,4 +7,5 @@
     [selected]="combobox.value"
     [strictCompare]= "combobox.strictSearch" 
     [searchFor]="combobox.searchWith"
+    (afterSelection)="selectionMadeCallBack($event)"
     ></combo-box>

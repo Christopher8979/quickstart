@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
     // moduleId :: setting moduleId: module.id in the @Component decorator is the key here.
@@ -20,6 +20,9 @@ export class ComboBoxComponent implements OnInit {
     @Input() searchFor: string;
     @Input() selected: any;
 
+
+    @Output() afterSelection: EventEmitter<any> = new EventEmitter();
+
     private typeText: string;
     private dropDownOpened: boolean = false;
     private isClearEnabled: boolean = false;
@@ -40,7 +43,8 @@ export class ComboBoxComponent implements OnInit {
         this.typeText = value[this.searchFor];
         this.isClearEnabled = true;    
 
-        // Event to be emitted    
+        // sending selected object as response
+        this.afterSelection.next([this.selected]);
     }
 
     clearSelection() {
