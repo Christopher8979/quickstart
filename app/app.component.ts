@@ -624,4 +624,17 @@ export class AppComponent {
     selectionMadeCallBack(value : any) {
         console.log(value);
     }
+
+    public walkThrough: Object = {
+        images: [
+            './app/images/water-bird.jpg',
+            './app/images/dark-flowers.jpg',
+            './app/images/some-random-flower.jpg',
+            './app/images/thurst.jpg',
+            './app/images/water-bird.jpg',
+            './app/images/water-grass.jpg'
+        ],
+        buttonText: 'Start Walk through',
+        heading: 'Welcome to first time walk through'
+    }
 }

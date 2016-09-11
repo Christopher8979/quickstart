@@ -1,13 +1,30 @@
 <h1>My First Angular 2 App</h1>
 
+Breadceumb:
 <breadcrumb [options]="breadcrumb.options" [continerClass]="breadcrumb.class"></breadcrumb>
 
-<walk-through></walk-through>
+<br>
+<br>
+First Time walk Through:
+<div>
+    <walk-through
+        [slides]="walkThrough.images"
+        [btnlabel]="walkThrough.buttonText"
+        [modalHeading]= "walkThrough.heading"
+        (onClose) = "modalCLosed($event)"
+    ></walk-through>
+</div>
 
-<combo-box 
-    [options]="combobox.options"
-    [selected]="combobox.value"
-    [strictCompare]= "combobox.strictSearch" 
-    [searchFor]="combobox.searchWith"
-    (afterSelection)="selectionMadeCallBack($event)"
-    ></combo-box>
+<br>
+<br>
+<br>
+Combobox :
+<div>
+    <combo-box 
+        [options]="combobox.options"
+        [selected]="combobox.value"
+        [strictCompare]= "combobox.strictSearch" 
+        [searchFor]="combobox.searchWith"
+        (afterSelection)="selectionMadeCallBack($event)"
+        ></combo-box>
+</div>

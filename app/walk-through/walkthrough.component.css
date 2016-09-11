@@ -20,6 +20,12 @@
   float: left;
 }
 
+
+.start-button {
+  background: #3d84de;
+  color: #fff;
+  font-size: 15px;
+}
 .mask {
   background: #677c9c;
   opacity: 0.3;
@@ -65,7 +71,7 @@
   right: 15px;
   background: rgba(37,115,187,1);
   border-radius: 13px;
-  padding: 6px;
+  padding: 6px 4px;
   font-size: 10px;
   color: #fff;
   line-height: 2px;
@@ -110,4 +116,44 @@
 
 .action-buttons button[ng-reflect-disabled="true"]  {
   background: lightgrey;
+}
+
+
+
+
+
+
+
+.carousel{
+    overflow:hidden;
+    width:100%;
+}
+.slides{
+    list-style:none;
+    position:relative;
+    width:600%; /* Number of panes * 100% */
+    overflow:hidden; /* Clear floats */
+}
+.slides > li{
+    position:relative;
+    float:left;
+    width: 20%; /* 100 / number of panes */
+}
+.carousel img{
+    display:block;
+    width:100%;
+    max-width:100%;
+}
+.carousel h2{
+    margin-bottom: 0;
+    font-size:1em;
+    padding:1.5em 0.5em 1.5em 0.5em;
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    text-align:center;
+    color:#fff;
+    background-color:rgba(0,0,0,0.75);
+    text-transform: uppercase;
 }

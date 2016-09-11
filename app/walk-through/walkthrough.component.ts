@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
     // moduleId :: setting moduleId: module.id in the @Component decorator is the key here.
@@ -14,10 +14,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class WalkThroughComponent implements OnInit {
+    @Input() slides : string[];
+    @Input() btnlabel : string;
+    @Input() modalHeading : string;
+
+    @Input() onClose : EventEmitter<any> = new EventEmitter();
+
+    private modalOpened: boolean = false;
+    private heading: string;
 
     // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
     }
 
-    private heading: string = 'Welcome to first time walk through';
+
+    openModal() {
+        this.modalOpened = true;
+    }
 };
