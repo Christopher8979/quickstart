@@ -4,12 +4,12 @@
 <div class="modal" *ngIf="modalOpened">
     <div class="modal-header">
         <h2>{{modalHeading}}</h2>
-        <span class="close"></span>
+        <span class="close" (click)="closeModal()">x</span>
     </div>
     <div class="modal-body">
         <div class="carousel">
             <ul class="slides">
-                <li *ngFor="let image of slides">
+                <li *ngFor="let image of slides; let index = index" [ngClass]="{show: (index===currentIndex)}">
                     <img src="{{image}}" alt="">
                 </li>
             </ul>
@@ -19,16 +19,16 @@
         <div class="clearfix" style="padding-top: 15px;">
             <div class="left">
                 <label for="dontShowNext">
-        <input type="checkbox"> Don't show me again
+        <input type="checkbox" [(ngModel)]="notAgain"> Don't show me again
         </label>
             </div>
             <div class="left" style="text-align: center;">
-                Viewing 1 of 6
+                Viewing {{currentIndex + 1}} of {{slides.length}}
             </div>
             <div class="left">
                 <div class="action-buttons right">
-                    <button [disabled]=true>Previous</button>
-                    <button>Next</button>
+                    <button [disabled]="currentIndex === 0" (click)="prevPage()">Previous</button>
+                    <button [disabled]="currentIndex === (slides.length-1)" (click)="nextPage()">Next</button>
                 </div>
             </div>
         </div>

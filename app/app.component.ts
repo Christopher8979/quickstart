@@ -627,14 +627,18 @@ export class AppComponent {
 
     public walkThrough: Object = {
         images: [
-            './app/images/water-bird.jpg',
-            './app/images/dark-flowers.jpg',
-            './app/images/some-random-flower.jpg',
-            './app/images/thurst.jpg',
-            './app/images/water-bird.jpg',
-            './app/images/water-grass.jpg'
+            './app/images/toon.jpg',
+            './app/images/nadal.jpg',
+            './app/images/holi.jpg',
+            './app/images/surf.jpg',
+            './app/images/car.jpg',
+            './app/images/fantasy.jpg'
         ],
         buttonText: 'Start Walk through',
         heading: 'Welcome to first time walk through'
+    }
+
+    modalCLosed(response : any) {
+        console.log(response);
     }
 }

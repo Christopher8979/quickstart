@@ -18,17 +18,43 @@ export class WalkThroughComponent implements OnInit {
     @Input() btnlabel : string;
     @Input() modalHeading : string;
 
-    @Input() onClose : EventEmitter<any> = new EventEmitter();
+    @Output() onClose : EventEmitter<any> = new EventEmitter();
 
     private modalOpened: boolean = false;
     private heading: string;
+    private responseMessage: string = '';
+    private notAgain: boolean;
+    private currentIndex: number;
 
     // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
+        this.currentIndex = 0;
     }
 
 
     openModal() {
         this.modalOpened = true;
+    }
+
+    closeModal() {
+        if (this.notAgain) {
+            this.responseMessage = 'Don\'t Show me again is selected';
+        } else {
+            this.responseMessage = 'Don\'t Show me again is not selected';
+        }
+        this.modalOpened = false;
+
+        this.onClose.next([{
+            selected : this.notAgain || false,
+            message : this.responseMessage
+        }]);
+    }
+
+    prevPage() {
+        this.currentIndex--;
+    }
+    
+    nextPage() {
+        this.currentIndex++;
     }
 };
