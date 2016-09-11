@@ -71,6 +71,11 @@
 }
 
 
+.combo-box .glyphicon-remove:before {
+  content: "x";
+  font-weight: bold;
+}
+
 .combo-box .input-group .form-control:first-child{
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;

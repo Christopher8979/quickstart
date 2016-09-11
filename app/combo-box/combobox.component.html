@@ -1,7 +1,10 @@
 <div class="combo-box">
   <div class="input-group">
     <input type="text" [(ngModel)]="typeText" (ngModelChange)="typing($event)" placeholder="Select One" class="combobox form-control">
-    <span class="input-group-addon dropdown-toggle" data-dropdown="dropdown"> <span class="caret"></span> <span class="glyphicon glyphicon-remove"></span> </span>
+    <span class="input-group-addon dropdown-toggle" data-dropdown="dropdown">
+      <span class="caret" *ngIf="!isClearEnabled"></span>
+      <span class="glyphicon glyphicon-remove" (click)="clearSelection()" *ngIf="isClearEnabled"></span>
+    </span>
   </div>
 </div>
 
