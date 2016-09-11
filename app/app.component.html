@@ -3,3 +3,11 @@
 <breadcrumb [options]="breadcrumb.options" [continerClass]="breadcrumb.class"></breadcrumb>
 
 <walk-through></walk-through>
+
+<combo-box 
+    [options]="combobox.options"
+    [selected]="combobox.value"
+    [strictCompare]= "combobox.strictSearch" 
+    [searchFor]="combobox.searchWith"
+    (afterSelection)="selectionMadeCallBack($event)"
+    ></combo-box>
