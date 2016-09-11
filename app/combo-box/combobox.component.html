@@ -1,16 +1,13 @@
 <div class="combo-box">
   <div class="input-group">
     <input type="text" [(ngModel)]="typeText" (ngModelChange)="typing($event)" placeholder="Select One" class="combobox form-control">
+    <ul *ngIf="dropDownOpened" class="typeahead typeahead-long dropdown-menu">
+        <li data-value="{{option.name}}" *ngFor="let option of (options | filter : searchFor : typeText : strictCompare)" (click)="selectThis(option)"><a href="#">{{option.name}}</a></li>
+    </ul>
+    
     <span class="input-group-addon dropdown-toggle" (click)="action()">
       <span class="caret" *ngIf="!isClearEnabled" ></span>
       <span class="glyphicon glyphicon-remove" *ngIf="isClearEnabled"></span>
     </span>
   </div>
 </div>
-
-
-<ul *ngIf="dropDownOpened">
-  <li *ngFor="let option of (options | filter : searchFor : typeText : strictCompare)" (click)="selectThis(option)">
-    {{option.name}}
-  </li>
-</ul>
