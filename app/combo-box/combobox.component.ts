@@ -49,5 +49,20 @@ export class ComboBoxComponent implements OnInit {
         this.isClearEnabled = false;
     }
 
+    toggleDropDown() {
+        // If there is text in input box then clear it and then toggle dropdown
+        if (this.dropDownOpened) {
+            this.typeText = '';
+        }
+        this.dropDownOpened = !this.dropDownOpened;        
+    }
+
+    action() {
+        if (this.isClearEnabled) {
+            this.clearSelection();
+        } else {
+            this.toggleDropDown();
+        }
+    }
     
 };

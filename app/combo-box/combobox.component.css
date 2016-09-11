@@ -57,6 +57,7 @@
   white-space: nowrap;
   vertical-align: middle;
   display: table-cell;
+  cursor: pointer;
 }
 
 .combo-box .caret {
@@ -70,6 +71,10 @@
   border-left: 4px solid transparent;
 }
 
+
+.combo-box .glyphicon-remove {
+  padding: 0 2px;
+}
 
 .combo-box .glyphicon-remove:before {
   content: "x";
