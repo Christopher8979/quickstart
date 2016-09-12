@@ -38,16 +38,17 @@ export class WalkThroughComponent implements OnInit {
     // holds boolean based on Dont show again selection
     private notAgain: boolean;
     // Holds the index of current view
-    private currentIndex: number;
+    private currentIndex: number = 0;
 
     // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
-        this.currentIndex = 0;
     }
 
     // method to open modal window
     openModal() {
         this.modalOpened = true;
+        // defaulting to start from 1st slide on opening
+        this.currentIndex = 0;
     }
 
     // method to close modal window

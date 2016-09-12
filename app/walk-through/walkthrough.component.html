@@ -29,7 +29,7 @@
                 <div class="action-buttons right">
                     <button [disabled]="currentIndex === 0" (click)="prevPage()">Previous</button>
                     <button *ngIf="currentIndex !== (slides.length-1)" (click)="nextPage()">Next</button>
-                    <button *ngIf="currentIndex === (slides.length-1)" (click)="closeModal()">Close</button>
+                    <button style="background:#e04949" *ngIf="currentIndex === (slides.length-1)" (click)="closeModal()">Close</button>
                 </div>
             </div>
         </div>
