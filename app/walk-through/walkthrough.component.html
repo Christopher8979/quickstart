@@ -1,5 +1,6 @@
 <button class="start-button" (click)="openModal()">{{btnlabel}}</button>
-
+<br>
+<span style="color:#ffbf4b">{{helperText}}</span>
 <div class="mask" *ngIf="modalOpened"></div>
 <div class="modal" *ngIf="modalOpened">
     <div class="modal-header">

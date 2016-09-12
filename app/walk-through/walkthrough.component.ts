@@ -39,6 +39,8 @@ export class WalkThroughComponent implements OnInit {
     private notAgain: boolean;
     // Holds the index of current view
     private currentIndex: number = 0;
+    // Used to show message:: having it static
+    private helperText: string;
 
     // ngOnInit function gets exicuted when component is initiated.
     ngOnInit(){
@@ -46,9 +48,13 @@ export class WalkThroughComponent implements OnInit {
 
     // method to open modal window
     openModal() {
-        this.modalOpened = true;
-        // defaulting to start from 1st slide on opening
-        this.currentIndex = 0;
+        if (!this.notAgain) {
+            this.modalOpened = true;
+            // defaulting to start from 1st slide on opening
+            this.currentIndex = 0;
+        } else {
+            this.helperText = 'Walk through is being skipped.';
+        }
     }
 
     // method to close modal window
