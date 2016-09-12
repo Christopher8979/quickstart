@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     moduleId: module.id,
     selector: 'my-app',
-    // template: '<h1>My First Angular 2 App<custom-tag></custom-tag></h1>'
+    styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html'
 })
 export class AppComponent { 
@@ -621,7 +621,27 @@ export class AppComponent {
         'value': {}
     };
 
+    // Call back that will be called after selecting a value from combobox
     selectionMadeCallBack(value : any) {
         console.log(value);
+    }
+
+    public walkThrough: Object = {
+        images: [
+            './app/images/toon.jpg',
+            './app/images/nadal.jpg',
+            './app/images/holi.jpg',
+            './app/images/surf.jpg',
+            './app/images/car.jpg',
+            './app/images/fantasy.jpg'
+        ],
+        buttonText: 'Start Walk through',
+        heading: 'Welcome to first time walk through'
+    }
+
+    // Call back/ response that will be triggered on closing the modal window
+    // of first time walk through component
+    modalCLosed(response : any) {
+        console.log(response);
     }
 }
