@@ -13,6 +13,17 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
     templateUrl: './walkthrough.component.html'
 })
 
+
+// Component Description:
+// Walkthrough accepts following inputs
+// slides : [strings]    : Strings have to be proper path of images
+// btnlabel: string      : label of the button to be displayed
+// modalHeading : string : Heading of the modal window
+//
+// This component emits event/callback on closing modal pop up
+// Sending a object that has the status if Don't show again is checked or not
+
+
 export class WalkThroughComponent implements OnInit {
     @Input() slides : string[];
     @Input() btnlabel : string;
@@ -20,10 +31,13 @@ export class WalkThroughComponent implements OnInit {
 
     @Output() onClose : EventEmitter<any> = new EventEmitter();
 
+    // checks if modal is open or not
     private modalOpened: boolean = false;
-    private heading: string;
+    // hold the message that has to be sent back to user
     private responseMessage: string = '';
+    // holds boolean based on Dont show again selection
     private notAgain: boolean;
+    // Holds the index of current view
     private currentIndex: number;
 
     // ngOnInit function gets exicuted when component is initiated.
@@ -31,11 +45,12 @@ export class WalkThroughComponent implements OnInit {
         this.currentIndex = 0;
     }
 
-
+    // method to open modal window
     openModal() {
         this.modalOpened = true;
     }
 
+    // method to close modal window
     closeModal() {
         if (this.notAgain) {
             this.responseMessage = 'Don\'t Show me again is selected';
@@ -50,10 +65,12 @@ export class WalkThroughComponent implements OnInit {
         }]);
     }
 
+    // method to switch back to page
     prevPage() {
         this.currentIndex--;
     }
     
+    // method to go to next page
     nextPage() {
         this.currentIndex++;
     }

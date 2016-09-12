@@ -23,8 +23,11 @@ export class ComboBoxComponent implements OnInit {
 
     @Output() afterSelection: EventEmitter<any> = new EventEmitter();
 
+    // string to hold the value being typed in combo's input
     private typeText: string;
+    // boolean to check if dropdown is open
     private dropDownOpened: boolean = false;
+    // boolean to keep track of when to clear the data/option selected
     private isClearEnabled: boolean = false;
 
     // ngOnInit function gets exicuted when component is initiated.
@@ -32,6 +35,7 @@ export class ComboBoxComponent implements OnInit {
         this.typeText = this.selected[this.searchFor] || '';
     }
 
+    // method to show dropdown
     typing(valueTyped : string){
         this.dropDownOpened = true;
     }
@@ -47,12 +51,14 @@ export class ComboBoxComponent implements OnInit {
         this.afterSelection.next([this.selected]);
     }
 
+    // method to cleat selection
     clearSelection() {
         this.selected = {};
         this.typeText = '';
         this.isClearEnabled = false;
     }
 
+    // method to togle dropdwn..
     toggleDropDown() {
         // If there is text in input box then clear it and then toggle dropdown
         if (this.dropDownOpened) {
@@ -61,6 +67,7 @@ export class ComboBoxComponent implements OnInit {
         this.dropDownOpened = !this.dropDownOpened;        
     }
 
+    // method that decised what action to be performed based of input value
     action() {
         if (this.isClearEnabled) {
             this.clearSelection();

@@ -1,11 +1,13 @@
-<h1>My First Angular 2 App</h1>
+<h1>Set 12 components</h1>
 
-Breadceumb:
+<strong>Breadceumb:</strong>
 <breadcrumb [options]="breadcrumb.options" [continerClass]="breadcrumb.class"></breadcrumb>
 
 <br>
 <br>
-First Time walk Through:
+<strong>First Time walk Through:</strong>
+<br>
+<br>
 <div>
     <walk-through
         [slides]="walkThrough.images"
@@ -18,13 +20,30 @@ First Time walk Through:
 <br>
 <br>
 <br>
-Combobox :
-<div>
-    <combo-box 
-        [options]="combobox.options"
-        [selected]="combobox.value"
-        [strictCompare]= "combobox.strictSearch" 
-        [searchFor]="combobox.searchWith"
-        (afterSelection)="selectionMadeCallBack($event)"
+<strong>Combobox :</strong>
+<br>
+<br>
+<div class="clearfix">
+    <div>
+        Strict Compare:
+        <br>
+        <combo-box 
+            [options]="combobox.options"
+            [selected]="combobox.value"
+            [strictCompare]= "combobox.strictSearch" 
+            [searchFor]="combobox.searchWith"
+            (afterSelection)="selectionMadeCallBack($event)"
+            ></combo-box>
+    </div>
+
+    <div>
+        Non-Strict Compare:
+        <br>
+        <combo-box 
+            [options]="combobox.options"
+            [selected]="combobox.value" 
+            [searchFor]="combobox.searchWith"
+            (afterSelection)="selectionMadeCallBack($event)"
         ></combo-box>
+    </div>
 </div>
